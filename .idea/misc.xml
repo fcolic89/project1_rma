@@ -3,8 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/drawable/ic_profile.xml" value="0.142" />
+        <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/drawable/ic_test.xml" value="0.142" />
+        <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/drawable/ic_test_foreground.xml" value="0.142" />
         <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/layout/activity_login.xml" value="0.19947916666666668" />
         <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/layout/fragment_new_ticket.xml" value="0.2710926694329184" />
+        <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
+        <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/layout/fragment_statistics.xml" value="0.3863794301598332" />
+        <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/layout/fragment_tickets.xml" value="0.2015625" />
+        <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/menu/bottom_navigation.xml" value="0.33" />
+        <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/mipmap-anydpi-v26/ic_test.xml" value="0.142" />
+        <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/mipmap-anydpi-v26/ic_test_round.xml" value="0.142" />
       </map>
     </option>
   </component>
