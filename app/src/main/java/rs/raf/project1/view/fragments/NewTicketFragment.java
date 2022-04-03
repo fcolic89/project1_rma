@@ -71,7 +71,7 @@ public class NewTicketFragment extends Fragment {
                 Toast.makeText(requireActivity(), "All fields must be filled!", Toast.LENGTH_LONG).show();
             else {
                 Toast.makeText(requireActivity(), "OK", Toast.LENGTH_LONG).show();
-                ticketViewModel.addTicket(new Ticket(etTicketTitle.getText().toString(),
+                ticketViewModel.moveToToDo(new Ticket(etTicketTitle.getText().toString(),
                                                     etTicketDesc.getText().toString(),
                                                     Integer.parseInt(etEstimate.getText().toString()),
                                                     TicketType.valueOf(spTicketType.getSelectedItem().toString()),

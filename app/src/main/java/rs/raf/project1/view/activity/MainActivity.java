@@ -9,7 +9,7 @@ import android.os.Bundle;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import rs.raf.project1.R;
-import rs.raf.project1.view.viewpager.PagerAdapter;
+import rs.raf.project1.view.viewpager.BottomNavigationPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,16 +30,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initViewPager(){
-        viewPager.setAdapter(new PagerAdapter(getSupportFragmentManager()));
+        viewPager.setAdapter(new BottomNavigationPagerAdapter(getSupportFragmentManager()));
     }
 
     private void initNavigation(){
         bottomNavigation.setOnItemSelectedListener(item -> {
             switch (item.getItemId()){
-                case R.id.navigation_1: viewPager.setCurrentItem(PagerAdapter.STATISTICS_FRAGMENT, false); break;
-                case R.id.navigation_2: viewPager.setCurrentItem(PagerAdapter.NEW_TICKET_FRAGMENT, false); break;
-                case R.id.navigation_3: viewPager.setCurrentItem(PagerAdapter.TICKETS_FRAGMENT, false); break;
-                case R.id.navigation_4: viewPager.setCurrentItem(PagerAdapter.PROFILE_FRAGMENT, false); break;
+                case R.id.navigation_1: viewPager.setCurrentItem(BottomNavigationPagerAdapter.STATISTICS_FRAGMENT, false); break;
+                case R.id.navigation_2: viewPager.setCurrentItem(BottomNavigationPagerAdapter.NEW_TICKET_FRAGMENT, false); break;
+                case R.id.navigation_3: viewPager.setCurrentItem(BottomNavigationPagerAdapter.TICKETS_FRAGMENT, false); break;
+                case R.id.navigation_4: viewPager.setCurrentItem(BottomNavigationPagerAdapter.PROFILE_FRAGMENT, false); break;
 
             }
             return true;

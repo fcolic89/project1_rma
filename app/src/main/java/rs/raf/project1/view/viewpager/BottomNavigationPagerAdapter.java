@@ -11,7 +11,7 @@ import rs.raf.project1.view.fragments.ProfileFragment;
 import rs.raf.project1.view.fragments.StatisticsFragment;
 import rs.raf.project1.view.fragments.TicketsFragment;
 
-public class PagerAdapter extends FragmentPagerAdapter {
+public class BottomNavigationPagerAdapter extends FragmentPagerAdapter {
 
     private final int ITEM_COUNT = 4;
     public static final int STATISTICS_FRAGMENT = 0;
@@ -19,7 +19,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
     public static final int TICKETS_FRAGMENT = 2;
     public static final int PROFILE_FRAGMENT = 3;
 
-    public PagerAdapter(@NonNull FragmentManager fm) {
+    public BottomNavigationPagerAdapter(@NonNull FragmentManager fm) {
         super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
     }
 

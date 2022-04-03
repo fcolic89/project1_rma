@@ -3,7 +3,7 @@ package rs.raf.project1.model;
 public class Ticket {
 
     private String title, ticetDesc;
-    int estemated;
+    int estemated, id;
     TicketType type;
     TicketPriority priority;
 
@@ -13,6 +13,7 @@ public class Ticket {
         this.estemated = estemated;
         this.type = type;
         this.priority = priority;
+        this. id = 0;
     }
 
     public Ticket() {
@@ -56,5 +57,13 @@ public class Ticket {
 
     public void setPriority(TicketPriority priority) {
         this.priority = priority;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

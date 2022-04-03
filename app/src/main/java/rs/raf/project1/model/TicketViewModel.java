@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TicketViewModel extends ViewModel {
+
+    private static int idCounter = 0;
     //ticket lists
     private final MutableLiveData<List<Ticket>> toDo = new MutableLiveData<>();
     private final MutableLiveData<List<Ticket>> inProgress = new MutableLiveData<>();
@@ -32,17 +34,69 @@ public class TicketViewModel extends ViewModel {
     private MutableLiveData<Integer> doneBugCnt = new MutableLiveData<>(0);
 
 
-    public void addTicket(Ticket newTicket){
-
+    public void moveToToDo(Ticket ticket){
         toDoCnt.setValue(toDoCnt.getValue()+1);
-        if(newTicket.getType() == TicketType.BUG)
+        if(ticket.getType() == TicketType.BUG)
             toDoBugCnt.setValue(toDoBugCnt.getValue()+1);
         else
             toDoEnhancementCnt.setValue(toDoEnhancementCnt.getValue()+1);
-
-        toDoList.add(newTicket);
+        if(ticket.getId() == 0)
+            ticket.setId(++idCounter);
+        toDoList.add(ticket);
         ArrayList<Ticket> listToSubmit = new ArrayList<>(toDoList);
         toDo.setValue(listToSubmit);
+    }
+
+    public void removeFromToDo(Ticket ticket){
+        toDoCnt.setValue(toDoCnt.getValue()-1);
+        if(ticket.getType() == TicketType.BUG)
+            toDoBugCnt.setValue(toDoBugCnt.getValue()-1);
+        else
+            toDoEnhancementCnt.setValue(toDoEnhancementCnt.getValue()-1);
+        toDoList.remove(ticket);
+        ArrayList<Ticket> listToSubmit = new ArrayList<>(toDoList);
+        toDo.setValue(listToSubmit);
+    }
+
+    public void removeFromInProgress(Ticket ticket){
+        inProgressCnt.setValue(inProgressCnt.getValue()-1);
+        if(ticket.getType() == TicketType.BUG)
+            inProgressBugCnt.setValue(inProgressBugCnt.getValue()-1);
+        else
+            inProgressEnhancementCnt.setValue(inProgressEnhancementCnt.getValue()-1);
+
+        inProgressList.remove(ticket);
+        ArrayList<Ticket> listToSubmit = new ArrayList<>(inProgressList);
+        inProgress.setValue(listToSubmit);
+    }
+
+    public void moveToInProgress(Ticket ticket){
+        inProgressCnt.setValue(inProgressCnt.getValue()+1);
+        if(ticket.getType() == TicketType.BUG)
+            inProgressBugCnt.setValue(inProgressBugCnt.getValue()+1);
+        else
+            inProgressEnhancementCnt.setValue(inProgressEnhancementCnt.getValue()+1);
+
+        inProgressList.add(ticket);
+        ArrayList<Ticket> listToSubmit = new ArrayList<>(inProgressList);
+        inProgress.setValue(listToSubmit);
+
+        removeFromToDo(ticket);
+    }
+
+    public void moveBackToToDo(Ticket ticket){
+        removeFromInProgress(ticket);
+        moveToToDo(ticket);
+    }
+
+    public void moveToDone(Ticket ticket){
+        doneCnt.setValue(inProgressCnt.getValue()+1);
+        if(ticket.getType() == TicketType.BUG)
+            inProgressBugCnt.setValue(inProgressBugCnt.getValue()+1);
+        else
+            inProgressEnhancementCnt.setValue(inProgressEnhancementCnt.getValue()+1);
+
+        removeFromInProgress(ticket);
     }
 
 
