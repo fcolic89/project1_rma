@@ -32,18 +32,18 @@
 
     <TextView
         android:id="@+id/tvToDoItemDesc"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
-        android:maxLength="20"
+        android:layout_marginBottom="20dp"
         android:maxLines="2"
         android:text="TextView"
-        android:layout_marginLeft="15dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/tvToDoItemTitle"
-        app:layout_constraintStart_toEndOf="@id/imgToDoItem"
+        android:layout_marginRight="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="432dp"
+        app:layout_constraintEnd_toStartOf="@+id/imgToDoItemRigth"
+        app:layout_constraintStart_toEndOf="@id/imgToDoItem"
+        app:layout_constraintTop_toBottomOf="@+id/tvToDoItemTitle"
         tools:ignore="MissingConstraints" />
 
     <ImageView
