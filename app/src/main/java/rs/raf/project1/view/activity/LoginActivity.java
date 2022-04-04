@@ -35,20 +35,15 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initUsers();
-        //splashViewModel = new ViewModelProvider(this).get(SplashViewModel.class);
-        SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
-        splashScreen.setKeepOnScreenCondition(() -> {
-
-            //Boolean value = splashViewModel.isLoading().getValue();
-            //return value;
-            if (!sharedPreferences.getString(PREF_LOGGEDIN, "").equals("")) {
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-            return false;
-        });
-
+//        SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
+//        splashScreen.setKeepOnScreenCondition(() -> {
+//            if (!sharedPreferences.getString(PREF_LOGGEDIN, "").equals("")) {
+//                Intent intent = new Intent(this, MainActivity.class);
+//                startActivity(intent);
+//                //finish();
+//            }
+//            return false;
+//        });
         setContentView(R.layout.activity_login);
         init();
     }

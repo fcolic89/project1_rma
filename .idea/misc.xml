@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/drawable/ic_bug.xml" value="0.1" />
+        <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/drawable/ic_file_logo.xml" value="0.1" />
         <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/drawable/ic_left_arrow.xml" value="0.1" />
         <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/drawable/ic_minus.xml" value="0.1" />
@@ -18,8 +19,9 @@
         <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/drawable/ic_tickets.xml" value="0.1" />
         <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/layout/activity_detail.xml" value="0.5" />
         <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/layout/activity_edit.xml" value="0.1" />
-        <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/layout/activity_login.xml" value="0.19947916666666668" />
+        <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/layout/activity_login.xml" value="0.67" />
         <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/layout/activity_splash_screen.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/layout/done_list_item.xml" value="0.296875" />
         <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/layout/fragment_detail.xml" value="0.33016304347826086" />
         <entry key="..\:/Users/Filip/Desktop/android_studio/project1/app/src/main/res/layout/fragment_done.xml" value="0.23550724637681159" />
