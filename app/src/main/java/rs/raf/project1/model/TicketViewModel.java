@@ -35,9 +35,8 @@ public class TicketViewModel extends ViewModel {
     private MutableLiveData<Integer> doneBugCnt = new MutableLiveData<>(0);
 
     public TicketViewModel() {
-        toDoList.add(new Ticket("title",  "ticetDesc", 1, TicketType.BUG, TicketPriority.HIGH));
-        ArrayList<Ticket> listToSubmit = new ArrayList<>(toDoList);
-        toDo.setValue(listToSubmit);
+        moveToToDo(new Ticket("title",  "ticetDesc", 1, TicketType.BUG, TicketPriority.HIGH));
+
     }
 
     public void moveToToDo(Ticket ticket){
@@ -96,11 +95,11 @@ public class TicketViewModel extends ViewModel {
     }
 
     public void moveToDone(Ticket ticket){
-        doneCnt.setValue(inProgressCnt.getValue()+1);
+        doneCnt.setValue(doneCnt.getValue()+1);
         if(ticket.getType() == TicketType.BUG)
-            inProgressBugCnt.setValue(inProgressBugCnt.getValue()+1);
+            doneBugCnt.setValue(doneBugCnt.getValue()+1);
         else
-            inProgressEnhancementCnt.setValue(inProgressEnhancementCnt.getValue()+1);
+            doneEnhancementCnt.setValue(doneEnhancementCnt.getValue()+1);
 
         doneList.add(ticket);
         ArrayList<Ticket> listToSubmit = new ArrayList<>(doneList);
@@ -132,7 +131,17 @@ public class TicketViewModel extends ViewModel {
                 tmp.setPriority(ticket.getPriority());
                 tmp.setTitle(ticket.getTitle());
                 tmp.setTicetDesc(ticket.getTicetDesc());
-                tmp.setType(ticket.getType());
+                if(tmp.getType() != ticket.getType()) {
+                    if(tmp.getType() == TicketType.BUG) {
+                        toDoBugCnt.setValue(toDoBugCnt.getValue()-1);
+                        toDoEnhancementCnt.setValue(toDoEnhancementCnt.getValue()+1);
+                    }
+                    else{
+                        toDoBugCnt.setValue(toDoBugCnt.getValue()+1);
+                        toDoEnhancementCnt.setValue(toDoEnhancementCnt.getValue()-1);
+                    }
+                    tmp.setType(ticket.getType());
+                }
                 break;
             }
         }
@@ -151,7 +160,17 @@ public class TicketViewModel extends ViewModel {
                 tmp.setPriority(ticket.getPriority());
                 tmp.setTitle(ticket.getTitle());
                 tmp.setTicetDesc(ticket.getTicetDesc());
-                tmp.setType(ticket.getType());
+                if(tmp.getType() != ticket.getType()) {
+                    if(tmp.getType() == TicketType.BUG) {
+                        inProgressBugCnt.setValue(inProgressBugCnt.getValue()-1);
+                        inProgressEnhancementCnt.setValue(inProgressEnhancementCnt.getValue()+1);
+                    }
+                    else{
+                        inProgressBugCnt.setValue(inProgressBugCnt.getValue()+1);
+                        inProgressEnhancementCnt.setValue(inProgressEnhancementCnt.getValue()-1);
+                    }
+                    tmp.setType(ticket.getType());
+                }
                 break;
             }
         }

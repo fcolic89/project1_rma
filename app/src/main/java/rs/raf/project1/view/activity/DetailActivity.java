@@ -65,7 +65,8 @@ public class DetailActivity extends AppCompatActivity {
         getTicket();
         initView();
         setView(ticket);
-        initListeners();
+        if(!ticketFrom.equals("done"))
+            initListeners();
     }
 
     private void initView(){
