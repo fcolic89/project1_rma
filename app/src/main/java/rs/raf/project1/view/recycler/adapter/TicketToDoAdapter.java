@@ -22,6 +22,7 @@ import rs.raf.project1.R;
 import rs.raf.project1.model.Ticket;
 import rs.raf.project1.model.TicketType;
 import rs.raf.project1.model.TicketViewModel;
+import rs.raf.project1.view.activity.LoginActivity;
 
 public class TicketToDoAdapter extends ListAdapter<Ticket, TicketToDoAdapter.ViewHolder> {
     private final Consumer<Ticket> onTicketClicked;
@@ -53,11 +54,16 @@ public class TicketToDoAdapter extends ListAdapter<Ticket, TicketToDoAdapter.Vie
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private final Context context;
+        private boolean regular = false;
         //private TicketViewModel ticketViewModel;
 
         public ViewHolder(@NonNull View itemView, Context context, Consumer<Integer> onItemClick) {
             super(itemView);
             this.context = context;
+
+            if(context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE).getString(LoginActivity.PREF_LOGGEDIN,"").equals("REGULAR"))
+                this.regular = true;
+
             itemView.setOnClickListener(v -> {
                 if(getBindingAdapterPosition() != RecyclerView.NO_POSITION){
                     onItemClick.accept(getBindingAdapterPosition());
@@ -79,9 +85,12 @@ public class TicketToDoAdapter extends ListAdapter<Ticket, TicketToDoAdapter.Vie
             tv2.setText(ticket.getTicetDesc());
 
             ImageView imgRemoveTicket = itemView.findViewById(R.id.imgToDoItemMinus);
-            imgRemoveTicket.setOnClickListener(v -> {
-                ticketViewModel.removeFromToDo(ticket);
-            });
+            if(regular)
+                imgRemoveTicket.setVisibility(View.GONE);
+            else
+                imgRemoveTicket.setOnClickListener(v -> {
+                    ticketViewModel.removeFromToDo(ticket);
+                });
 
             ImageView imgMoveToInProgress = itemView.findViewById(R.id.imgToDoItemRigth);
             imgMoveToInProgress.setOnClickListener(v -> {

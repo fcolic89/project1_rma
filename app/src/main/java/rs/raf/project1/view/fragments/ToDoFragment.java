@@ -1,12 +1,17 @@
 package rs.raf.project1.view.fragments;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.Layout;
 import android.text.TextWatcher;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
@@ -24,6 +29,7 @@ import rs.raf.project1.R;
 import rs.raf.project1.model.Ticket;
 import rs.raf.project1.model.TicketViewModel;
 import rs.raf.project1.view.activity.DetailActivity;
+import rs.raf.project1.view.activity.LoginActivity;
 import rs.raf.project1.view.recycler.adapter.TicketDiffItemCallback;
 import rs.raf.project1.view.recycler.adapter.TicketToDoAdapter;
 
