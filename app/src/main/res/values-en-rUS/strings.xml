@@ -1,16 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">project1</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
-    <string name="title_activity_edit" translatable="false">EditActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label" translatable="false">First Fragment</string>
-    <string name="second_fragment_label" translatable="false">Second Fragment</string>
-    <string name="next" translatable="false">Next</string>
-    <string name="previous" translatable="false">Previous</string>
-
-    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
-    <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
     <string name="search">Search...</string>
     <string name="login">Login</string>
     <string name="password">Password</string>
@@ -21,8 +10,8 @@
     <string name="todo_category">ToDo</string>
     <string name="enhancements">Enhancements</string>
     <string name="bugs">Bugs</string>
-    <string name="in_progress_category">In progress</string>
     <string name="done_category">Done</string>
+    <string name="in_progress_category">In progress</string>
     <string name="add_new_ticket_title">Add new ticket</string>
     <string name="estimation_input">Est.</string>
     <string name="ticket_title_input_hint">Ticket title</string>

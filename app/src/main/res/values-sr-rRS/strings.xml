@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search" translatable="false">Pretrazi...</string>
+    <string name="login">Prijavi se</string>
+    <string name="password">Lozinka</string>
+    <string name="email">Email</string>
+    <string name="username">Korisnicko ime</string>
+    <string name="login_title">Jira sistem za studente Raf-a</string>
+    <string name="stats_title">Raf Jira statistika</string>
+    <string name="todo_category">ToDo</string>
+    <string name="enhancements">Poboljsanja</string>
+    <string name="bugs">Bagovi</string>
+    <string name="in_progress_category">In progress</string>
+    <string name="done_category">Done</string>
+    <string name="add_new_ticket_title">Dodaj novu karticu</string>
+    <string name="estimation_input">Est.</string>
+    <string name="ticket_title_input_hint">Naslov karticce</string>
+    <string name="ticket_description_input_hint">Opis kartice</string>
+    <string name="tab_todo">TODO</string>
+    <string name="tab_inprogress">IN PROGRESS</string>
+    <string name="tab_DONE">DONE</string>
+    <string name="edit_ticket_title">Izmeni karticu</string>
+    <string name="save_edit">Sacuvaj</string>
+    <string name="edit_btn">Izmeni</string>
+    <string name="logged_time">Potroseno vreme</string>
+    <string name="estimation_detail">Estimacija</string>
+    <string name="priority_detail">Prioritet</string>
+    <string name="tickettype_detail">Tip kartice</string>
+    <string name="log_out">Odjavi se</string>
+    <string name="statistics_bottom_navi">Statistika</string>
+    <string name="new_bottom_navi">Novi</string>
+    <string name="tickets_bottom_navi">Kartice</string>
+    <string name="profile_bottom_navi">Profil</string>
+</resources>

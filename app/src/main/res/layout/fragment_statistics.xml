@@ -17,7 +17,7 @@
             android:textStyle="bold"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
-            android:text="Raf Jira statistics"
+            android:text="@string/stats_title"
             android:textSize="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="40dp"
-            android:text="ToDo"
+            android:text="@string/todo_category"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="120dp"
             android:layout_marginTop="20dp"
-            android:text="Enhancements"
+            android:text="@string/enhancements"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tbToDo" />
 
@@ -77,7 +77,7 @@
             android:textStyle="bold"
             android:layout_marginLeft="120dp"
             android:layout_marginTop="20dp"
-            android:text="Bugs"
+            android:text="@string/bugs"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvToDoEnhancement" />
 
@@ -100,7 +100,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
-            android:text="In progress"
+            android:text="@string/in_progress_category"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTodoBugs" />
 
@@ -111,7 +111,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="120dp"
             android:layout_marginTop="20dp"
-            android:text="Enhancement"
+            android:text="@string/enhancements"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvInProgress" />
 
@@ -145,7 +145,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="120dp"
             android:layout_marginTop="20dp"
-            android:text="Bugs"
+            android:text="@string/bugs"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvInProgressEnhancement" />
 
@@ -168,7 +168,7 @@
             android:layout_marginLeft="20dp"
             android:textColor="#248f24"
             android:layout_marginTop="30dp"
-            android:text="Done"
+            android:text="@string/done_category"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvInProgressBugs" />
 
@@ -179,7 +179,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="120dp"
             android:layout_marginTop="20dp"
-            android:text="Enhancements"
+            android:text="@string/enhancements"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvDone" />
 
@@ -211,7 +211,7 @@
             android:id="@+id/tvDoneBugs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bugs"
+            android:text="@string/bugs"
             android:layout_marginLeft="120dp"
             android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="parent"
