@@ -7,30 +7,29 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.Toast;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
     private SharedPreferences sharedPreferences;
-
+    private Intent intent;
+    private boolean logged = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         sharedPreferences = getSharedPreferences(getPackageName(), Context.MODE_PRIVATE);
         SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
         splashScreen.setKeepOnScreenCondition(() -> {
-            Intent main = new Intent(this, MainActivity.class);
-            Intent login = new Intent(this, LoginActivity.class);
-            if (!sharedPreferences.getString(LoginActivity.PREF_LOGGEDIN, "").equals("")) {
-                System.out.println("Ovde1");
-                startActivity(main);
+            if (sharedPreferences.getString(LoginActivity.PREF_LOGGEDIN, "").equals("")) {
+                startActivity(new Intent(this, LoginActivity.class));
             }
             else {
-                System.out.println("Ovde2");
-                startActivity(login);
+                startActivity(new Intent(this, MainActivity.class));
             }
+            finish();
             return false;
         });
-        //finish();
+
         //setContentView(rs.raf.project1.R.layout.activity_splash_screen);
     }
 }
