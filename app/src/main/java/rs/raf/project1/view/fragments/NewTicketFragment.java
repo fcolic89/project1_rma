@@ -89,7 +89,6 @@ public class NewTicketFragment extends Fragment {
     }
 
     private boolean checkDigit(String text){
-
         try{
             Integer.parseInt(text);
         }catch (Exception e){

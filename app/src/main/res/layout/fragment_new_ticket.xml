@@ -81,7 +81,7 @@
             android:layout_marginTop="30dp"
             android:inputType="textMultiLine"
             android:text="Ticket description"
-            android:maxLines="6"
+            android:maxLines="2"
             android:maxLength="140"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
