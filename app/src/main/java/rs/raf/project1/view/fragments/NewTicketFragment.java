@@ -67,10 +67,15 @@ public class NewTicketFragment extends Fragment {
 
 
         btnAddTicket.setOnClickListener(v -> {
-            if(!isFilled())
-                Toast.makeText(requireActivity(), "All fields must be filled!", Toast.LENGTH_LONG).show();
+            if(!isFilled()) {
+                Toast t = Toast.makeText(requireActivity(), "All fields must be filled!", Toast.LENGTH_LONG);
+                t.setGravity(Gravity.CENTER, 0, 0);
+                t.show();
+            }
             else {
-                Toast.makeText(requireActivity(), "OK", Toast.LENGTH_LONG).show();
+                Toast t= Toast.makeText(requireActivity(), "OK", Toast.LENGTH_LONG);
+                t.setGravity(Gravity.CENTER, 0, 0);
+                t.show();
                 ticketViewModel.moveToToDo(new Ticket(etTicketTitle.getText().toString(),
                                                     etTicketDesc.getText().toString(),
                                                     Integer.parseInt(etEstimate.getText().toString()),

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -77,7 +78,9 @@ public class EditActivity extends AppCompatActivity {
                 setResult(RESULT_OK, intent);
                 finish();
             }else{
-                Toast.makeText(this, "All fields must be filled!", Toast.LENGTH_LONG).show();
+                Toast t = Toast.makeText(this, "All fields must be filled!", Toast.LENGTH_LONG);
+                t.setGravity(Gravity.CENTER, 0, 0);
+                t.show();
             }
         });
 
