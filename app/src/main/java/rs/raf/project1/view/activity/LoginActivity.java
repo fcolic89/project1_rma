@@ -75,6 +75,10 @@ public class LoginActivity extends AppCompatActivity {
                 t = Toast.makeText(getApplicationContext(), "All fields must be filled!", Toast.LENGTH_LONG);
                 t.setGravity(Gravity.CENTER, 0, 0);
                 t.show();
+            }else if(etPassword.getText().toString().length() < 5){
+                t = Toast.makeText(getApplicationContext(), "Password must be at least 5 characters!", Toast.LENGTH_LONG);
+                t.setGravity(Gravity.CENTER, 0, 0);
+                t.show();
             } else if (etUsername.getText().toString().startsWith("admin") && etPassword.getText().toString().equals(sharedPreferences.getString(PREF_PASSWORD_ADMIN, ""))) {
                 sharedPreferences.edit().putString(PREF_LOGGEDIN, "ADMIN").apply();
                 setAndContinue();

@@ -78,7 +78,7 @@ public class DoneFragment extends Fragment {
 
     private void initRecycler(){
         adapter = new TicketDoneAdapter(new TicketDiffItemCallback(), ticket -> {
-            Toast.makeText(requireActivity(), ticket.getTitle(), Toast.LENGTH_LONG).show();
+            //Toast.makeText(requireActivity(), ticket.getTitle(), Toast.LENGTH_LONG).show();
             Intent intent = new Intent(requireActivity(), DetailActivity.class);
             intent.putExtra(DetailActivity.TICKET_DETAIL_DONE, ticket);
             startActivity(intent);
