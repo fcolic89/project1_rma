@@ -56,11 +56,12 @@ public class EditActivity extends AppCompatActivity {
         ArrayAdapter typeAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, Arrays.stream(TicketType.values()).toArray());
         typeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spTicketType.setAdapter(typeAdapter);
+        spTicketType.setSelection(TicketType.valueOf(ticket.getType().toString()).ordinal());
 
         ArrayAdapter priotityAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, Arrays.stream(TicketPriority.values()).toArray());
         priotityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spTicketPriority.setAdapter(priotityAdapter);
-
+        spTicketPriority.setSelection(TicketPriority.valueOf(ticket.getPriority().toString()).ordinal());
     }
 
     private void initListener() {
@@ -87,8 +88,8 @@ public class EditActivity extends AppCompatActivity {
     }
 
     private boolean isFilled(){
-        return spTicketPriority.getSelectedItem() != null
-                && spTicketType.getSelectedItem() != null
+       return spTicketPriority.getSelectedItem() != null && !spTicketPriority.getSelectedItem().toString().equals("PRIORITY")
+                && spTicketType.getSelectedItem() != null && !spTicketType.getSelectedItem().toString().equals("TICKET_TYPE")
                 && etEstimate.getText() != null && !etEstimate.getText().toString().equals("") && checkDigit(etEstimate.getText().toString())
                 && etTicketTitle.getText() != null && !etTicketTitle.getText().toString().equals("")
                 && etTicketDesc.getText() != null && !etTicketDesc.getText().toString().equals("");
