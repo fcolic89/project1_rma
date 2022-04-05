@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.Arrays;
 
@@ -63,19 +64,33 @@ public class EditActivity extends AppCompatActivity {
 
     private void initListener() {
         btnSave.setOnClickListener(v -> {
-            ticket.setType(TicketType.valueOf(spTicketType.getSelectedItem().toString()));
-            ticket.setPriority(TicketPriority.valueOf(spTicketPriority.getSelectedItem().toString()));
-            if(checkDigit(etEstimate.getText().toString()))
+            if(isFilled()) {
+                ticket.setType(TicketType.valueOf(spTicketType.getSelectedItem().toString()));
+                ticket.setPriority(TicketPriority.valueOf(spTicketPriority.getSelectedItem().toString()));
+//                if (checkDigit(etEstimate.getText().toString()))
                 ticket.setEstemated(Integer.parseInt(etEstimate.getText().toString()));
-            ticket.setTitle(etTicketTitle.getText().toString());
-            ticket.setTicetDesc(etTicketDesc.getText().toString());
+                ticket.setTitle(etTicketTitle.getText().toString());
+                ticket.setTicetDesc(etTicketDesc.getText().toString());
 
-            Intent intent = new Intent();
-            intent.putExtra(EDITED, ticket);
-            setResult(RESULT_OK, intent);
-            finish();
+                Intent intent = new Intent();
+                intent.putExtra(EDITED, ticket);
+                setResult(RESULT_OK, intent);
+                finish();
+            }else{
+                Toast.makeText(this, "All fields must be filled!", Toast.LENGTH_LONG).show();
+            }
         });
+
     }
+
+    private boolean isFilled(){
+        return spTicketPriority.getSelectedItem() != null
+                && spTicketType.getSelectedItem() != null
+                && etEstimate.getText() != null && !etEstimate.getText().toString().equals("") && checkDigit(etEstimate.getText().toString())
+                && etTicketTitle.getText() != null && !etTicketTitle.getText().toString().equals("")
+                && etTicketDesc.getText() != null && !etTicketDesc.getText().toString().equals("");
+    }
+
     private boolean checkDigit(String text){
         try{
             Integer.parseInt(text);
