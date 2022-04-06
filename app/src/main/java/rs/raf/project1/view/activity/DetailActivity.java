@@ -117,8 +117,10 @@ public class DetailActivity extends AppCompatActivity {
             btnLoggedTime.setText(ticket.getLoggedTime()+"");
         });
         btnLoggedTime.setOnLongClickListener(v -> {
-            ticket.setLoggedTime(ticket.getLoggedTime()-1);
-            btnLoggedTime.setText(ticket.getLoggedTime()+"");
+            if(ticket.getLoggedTime() > 0) {
+                ticket.setLoggedTime(ticket.getLoggedTime() - 1);
+                btnLoggedTime.setText(ticket.getLoggedTime() + "");
+            }
             return true;
         });
     }
